@@ -33,9 +33,9 @@ if ($_SESSION['email']) {
                 success: function(data) {
                     //confirm(data);
                     if(data.toString() == "yes") {
-                        window.location = "<?php echo $_SESSION['server'];?>todo";
+                        window.location = "<?php echo $_SESSION['server'];?>/todo";
                     }else if(data.toString() == "no"){
-                        window.location = "<?php echo $_SESSION['server'];?>sign-in/wrong-email-or-password";
+                        window.location = "<?php echo $_SESSION['server'];?>/sign-in/wrong-email-or-password";
                     }else {
                         //window.location = "http://localhost:8888/"
                         //alert(data);

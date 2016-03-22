@@ -54,7 +54,7 @@
                         success: function(data) {
                             if(data.toString() == "done") {
                                swal({   title: "Woo Hoo!",   text: "You now have a account", type: "success",   timer: 1500,   showConfirmButton: false });
-                               window.location = "<?php echo $_SESSION['server'];?>sign-in";
+                               window.location = "<?php echo $_SESSION['server'];?>sign-in/hello";
                             }else {
                                swal({   title: "Uh Ohh!",   text: "Something went wrong. We'll look into it!", type: "error",   timer: 1500,   showConfirmButton: false });
                             }

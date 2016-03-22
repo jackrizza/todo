@@ -25,7 +25,7 @@
                     'number': number
                 }),
                 success: function(data) {
-                    swal({   title: "Removing It!",   text: "",   type: "success",   confirmButtonText: "Cool" });
+                    swal({   title: "Removing It!",   text: "",   type: "success",    timer: 1000,   showConfirmButton: false, confirmbutton : "good" });
                     reload();
                 }
             });
@@ -40,7 +40,7 @@
                     'number': number
                 }),
                 success: function(data) {
-                    swal({   title: "Great job!",   text: "",   type: "success",   confirmButtonText: "Cool" });
+                    swal({   title: "Great job!",   text: "",   type: "success",    timer: 1000,   showConfirmButton: false });
                     reload();
                 }
             });
@@ -54,9 +54,9 @@
                 data: $("#update").serialize(), // serializes the form's elements.
                 success: function(data) {
                     if(data == "done") {
-                         swal({   title: "success!",   text: data,   type: "success",   confirmButtonText: "Cool" });
+                         swal({   title: "success!",   text: "",   type: "success", timer: 1000,   showConfirmButton: false, });
                      } else {
-                         swal({   title: "error!",   text: data,   type: "error",   confirmButtonText: "Cool" });
+                         swal({   title: "error!",   text: data,   type: "error",   confirmButtonText: "dang nabit" });
                      }
                     reload();
                 }
