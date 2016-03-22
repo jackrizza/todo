@@ -6,10 +6,10 @@
     ?>
 
 <script>
-    var url = window.location.href;
+    var appUrl = "http://localhost:8888";
     var header = {
     init : function() {
-        header.switchCase(url)
+        header.switchCase(window.location.href)
     },
     render : function(link) {
         $.get("http://localhost:8888" + link, function(data) {
@@ -18,19 +18,25 @@
     },
     switchCase : function(url) {
         switch(url){
-            case 'http://localhost:8888/':
+            case appUrl + '/':
                 header.render("/view/landing.html.php");
             break;
-            case 'http://localhost:8888/sign-in/hello':
+            case appUrl + '/sign-in/hello':
                 header.render("/view/login.html.php");
             break;
-            case 'http://localhost:8888/sign-up':
+            case appUrl + '/sign-up':
                 header.render("/view/signup.html.php");
             break;
-            case 'http://localhost:8888/todo':
-                header.render("/view/todo.html.php");
+            case appUrl + '/todo':
+            $.get(appUrl + '/app/session.php', function(data) {
+                 if( data == "Expired" ) {
+                     header.render("/view/no.html.php");
+                 } else if (data == "Active" ) {
+                     header.render("/view/todo.html.php");
+                 }
+             });
             break;
-            case 'http://localhost:8888/sign-out':
+            case appUrl + '/sign-out':
                 window.location.href = 'app/signout.php';
             break;
             default:
