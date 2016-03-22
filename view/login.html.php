@@ -1,16 +1,14 @@
 <?php
+    error_reporting(0);
+    ini_set('display_errors', 0);
+    ?>
+<?php
 if ($_SESSION['email']) {
     # code...
     header('location : ' . $_SESSION["server"] . 'todo');
 }
 ?>
-<?php if($_SESSION['error'] != "hello"): ?>
-    <div class="alert">
-        <?php echo str_replace("-", " ", $_SESSION['error']); ?>
-        <a href="#" class="close">x</a href="#">
-        <?php session_unset($_SESSION['error']); ?>
-    </div>
-<?php endif; ?>
+
 
 <div class="card">
 

@@ -1,7 +1,7 @@
 <div class="card">
     <h1>Your Todo list.</h1>
     <ul>
-        <div class="app"></div>
+        <div class="list"></div>
     </ul>
     <form action="/" method="POST" id="update">
         <input type="text" placeholder="do the trash" name="todo" autocomplete="off" class="text" required="">
@@ -12,7 +12,7 @@
 
         function reload() {
             $.get("view/template/todo.list.html.php", function(data) {
-                $(".app").html(data);
+                $(".list").html(data);
             });
         }
         reload();

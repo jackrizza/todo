@@ -1,3 +1,7 @@
+<?php
+    error_reporting(0);
+    ini_set('display_errors', 0);
+    ?>
 <div class="errors"></div>
 <div class="card">
     <h1>Sign Up</h1>
