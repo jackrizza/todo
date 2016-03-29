@@ -1,32 +1,12 @@
 <?php
+if (!session_start()) {
     session_start();
-    require 'passwords.php';
-    require '../vendor/autoload.php';
-    use Mailgun\Mailgun;
+}
+require '../vendor/autoload.php';
+use Mailgun\Mailgun;
 
-    $dbh = new PDO('pgsql:host=localhost;dbname=postgres', "postgres", "root");
-
-    if (isset($_POST['email'])) {
-        $email = $_POST['email'];
-    }
-    if (isset($_POST['password'])) {
-        $password = password($_POST['password']);
-    }
-
-    $signin = $dbh->prepare("INSERT INTO users (email, password) VALUES (:email, :password)");
-    $done = $signin->execute([
-        'email' => $email,
-        'password' => $password
-        ]);
-    if($done) {
-        mailCall($email);
-        echo "done";
-    }
-    else {
-        echo "something went wrong";
-    }
-    function mailCall($emailUser) {
-         # Instantiate the client.
+function mailCall($emailUser) {
+        # Instantiate the client.
         $email = 'jackrizza@gmail.com';
         $mgClient = new Mailgun('key-f55386178c87572f01fab07705741b64');
         $domain = "jackrizza.com";
@@ -102,4 +82,7 @@ a {
 '
         ]);
     }
+
+mailCall('jack-test@jackrizza.com');
+
 ?>

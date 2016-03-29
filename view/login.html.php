@@ -13,7 +13,7 @@ if ($_SESSION['email']) {
 <div class="card">
 
     <h1>Sign In</h1>
-    <form action="/" method="POST" id="signin">
+    <form action="/" method="POST" id="signin" autocomplete="off">
         <input type="email" name="email" autocomplete="off" placeholder="john@example.com">
         <input type="password" name="password" autocomplete="off" placeholder="password">
         <br>

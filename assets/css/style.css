@@ -11,6 +11,9 @@ body {
     color: #EEEEEE;
     overflow-x : hidden;
 }
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #F6F6F6 inset;
+}
 input[type="submit"],
 .btn-primary,
 .btn-secondary {
@@ -51,6 +54,7 @@ ul {
 }
 
 ul li a {
+    text-decoration: none;
     margin : 0 0.75em;
 }
 

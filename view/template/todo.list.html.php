@@ -16,9 +16,9 @@ $tdls = $todoList->fetchAll();
     <?php foreach ($tdls as $tdl): ?>
         <?php if (!$tdl['completed']): ?>
             <?php if ($tdl['done']): ?>
-                <li class="strike"><span><?php echo $tdl['todo'];?></span><a href="javascript:remove(<?php echo $tdl['id'];?>);">x</a></li>
+                <li class="strike"><span><?php echo $tdl['todo'];?></span><a href="javascript:remove(<?php echo $tdl['id'];?>);">&#10005;</a><a href="javascript:redo(<?php echo $tdl['id'];?>);">&#10079;</a></li>
             <?php else: ?>
-                <li><span><?php echo $tdl['todo'];?></span><a href="javascript:remove(<?php echo $tdl['id'];?>)">x</a><a href="javascript:done(<?php echo $tdl['id'];?>);">&#10003;</a></li>
+                <li><span><?php echo $tdl['todo'];?></span><a href="javascript:remove(<?php echo $tdl['id'];?>)">&#10005;</a><a href="javascript:done(<?php echo $tdl['id'];?>);">&#10003;</a></li>
             <?php endif ?>
         <?php endif ?>
     <?php endforeach; ?>

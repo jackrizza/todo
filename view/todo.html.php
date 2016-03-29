@@ -9,7 +9,18 @@
     </form>
 </div>
 <script type="text/javascript">
-
+        function notification() {
+            var url = "/app/notification.php"; // the script where you handle the form input.
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: ({
+                }),
+                success: function(data) {
+                }
+            });
+        }
+        notification();
         function reload() {
             $.get("view/template/todo.list.html.php", function(data) {
                 $(".list").html(data);
@@ -30,7 +41,22 @@
                 }
             });
         }
-
+        window.setInterval(function ve() {
+            var url = "/app/verifiedEmail.php"; // the script where you handle the form input.
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: "poop",
+                success: function(data) {
+                    if(data == "false") {
+                        swal({   title: "Check your email!",   text: "We need you to verify your email",   type: "error",  showConfirmButton: false, closeOnConfirm: false, confirmbutton : "good"  });
+                        console.log("needs to verify email");
+                    } else{
+                        console.log("all set");
+                    }
+                }
+            });
+        }, 1000);
         function done(number) {
             var url = "/app/done.php"; // the script where you handle the form input.
             $.ajax({
@@ -41,6 +67,20 @@
                 }),
                 success: function(data) {
                     swal({   title: "Great job!",   text: "",   type: "success",    timer: 1000,   showConfirmButton: false });
+                    reload();
+                }
+            });
+        }
+        function redo(number) {
+            var url = "/app/redo.php"; // the script where you handle the form input.
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: ({
+                    'number': number
+                }),
+                success: function(data) {
+                    swal({   title: "Let's see you do it again!",   text: "",   type: "success",    timer: 1000,   showConfirmButton: false });
                     reload();
                 }
             });
