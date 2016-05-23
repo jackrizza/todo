@@ -7,5 +7,5 @@ session_destroy();
 echo 'good bye';
 ?>
 <script>
-    window.location.href = "http://localhost:8888/";
+    window.location.href = "/";
 </script>
