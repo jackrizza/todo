@@ -6,7 +6,7 @@
     ?>
 
 <script>
-    var appUrl = "http://localhost:8888";
+    var appUrl = "https://todo-jackrizza.herokuapp.com/;
     var header = {
     init : function() {
         header.switchCase(window.location.href)
