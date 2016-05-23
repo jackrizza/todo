@@ -7,7 +7,7 @@
 
 <script>
     $(document).ready(function() {
-        var appUrl = "https://todo-jackrizza.herokuapp.com/;
+        var appUrl = "https://todo-jackrizza.herokuapp.com/";
         var header = {
         init : function() {
             header.switchCase(window.location.href)
