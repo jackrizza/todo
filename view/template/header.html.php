@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="assets/css/sweetalert.css">
     <title>todo</title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="assets/js/sweetalert.min.js"></script>
+    <script src="assets/js/sweetalert.min.js"></script>
+    <script>
+        $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+            options.async = true;
+        });
+    </script>
 </head>
     <body>
         <?php require "navagation.html.php";?>
