@@ -1,12 +1,4 @@
-<?php require "app/start.php";?>
-<?php require "view/template/header.html.php";?>
-<?php
-    error_reporting(0);
-    ini_set('display_errors', 0);
-    ?>
-
-<script>
-    var appUrl = "http://localhost:8888";
+var appUrl = "http://localhost:8888";
     var header = {
     init : function() {
         header.switchCase(window.location.href)
@@ -21,7 +13,6 @@
             case appUrl + '/':
                 header.render("/view/landing.html.php");
             break;
-            case appUrl + '/sign-in':
             case appUrl + '/sign-in/hello':
                 header.render("/view/login.html.php");
             break;
@@ -46,9 +37,3 @@
         }
     }
 }
-
-header.init();
-
-</script>
-<div class="app"></div>
-<?php require "view/template/footer.html.php";?>

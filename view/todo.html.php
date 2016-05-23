@@ -46,9 +46,9 @@
             $.ajax({
                 type: "POST",
                 url: url,
-                data: "poop",
+                data: "",
                 success: function(data) {
-                    if(data == "false") {
+                    if(data == "nonActiveEmail") {
                         swal({   title: "Check your email!",   text: "We need you to verify your email",   type: "error",  showConfirmButton: false, closeOnConfirm: false, confirmbutton : "good"  });
                         console.log("needs to verify email");
                     } else{

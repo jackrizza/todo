@@ -5,8 +5,9 @@
 
     $dbh = new PDO('pgsql:host=localhost;dbname=postgres', "postgres", "root");
 
-    $done = $dbh->prepare("UPDATE users SET confirm_email=T email=:email");
+    $done = $dbh->prepare("UPDATE users SET confirm_email=:confirm_email WHERE email=:email");
     $done->execute([
+        "confirm_email" => $_GET['email'],
         "email" => $_GET['email']
         ]);
 ?>

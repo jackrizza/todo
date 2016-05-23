@@ -9,6 +9,8 @@ if ($_SESSION['email']) {
 }
 ?>
 
+<div class="error">
+</div>
 
 <div class="card">
 
@@ -33,11 +35,9 @@ if ($_SESSION['email']) {
                     if(data.toString() == "yes") {
                         window.location = "<?php echo $_SESSION['server'];?>/todo";
                     }else if(data.toString() == "no"){
-                        window.location = "<?php echo $_SESSION['server'];?>/sign-in/wrong-email-or-password";
+                        $('.error').html(' <div class="alert alert-error">Wrong email or password<a class="close" href="#">&times;</a></div>')
                     }else {
-                        //window.location = "http://localhost:8888/"
-                        //alert(data);
-                    }
+                        swal({   title: "darn it!",   text: "you should not be seeing this. Try refreshing",   type: "error",   confirmButtonText: "Cool" });                    }
                     //swal({   title: "Sucsess!",   text: data,   type: "sucsess",   confirmButtonText: "Cool" });
                 }
             });
