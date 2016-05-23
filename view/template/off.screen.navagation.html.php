@@ -10,7 +10,7 @@
 </div>
 <script>
     function reloadSN() {
-        $.get("<?php echo $_SESSION['server'];?>view/template/off.screen.list.navagation.list.html.php", function(data) {
+        $.get("<?php echo $_SESSION['server'];?>/view/template/off.screen.list.navagation.list.html.php", function(data) {
             $(".sd-app").html(data);
         });
     }
